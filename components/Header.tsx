@@ -26,7 +26,7 @@ const Header: React.FC = () => {
           </div>
           <div>
             <h1 className="text-base sm:text-lg font-bold text-white tracking-tight leading-tight">DevMate AI</h1>
-            <p className="hidden sm:flex text-xs text-slate-400 items-center gap-1">
+            <p className="flex text-[10px] sm:text-xs text-slate-400 items-center gap-1">
               <Cpu size={10} className="text-cyan-500" />
               <span>Made By Charan</span>
             </p>
