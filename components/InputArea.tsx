@@ -35,9 +35,12 @@ const InputArea: React.FC<InputAreaProps> = ({ onSendMessage, isLoading, onStop 
   };
 
   return (
-    <div className="border-t border-slate-800 bg-slate-950/90 backdrop-blur-md p-2 sm:p-4 sticky bottom-0 z-10 safe-bottom">
+    <div className="border-t border-slate-800 bg-slate-950/90 backdrop-blur-md px-2 sm:px-4 pt-2 pb-[env(safe-area-inset-bottom)] sticky bottom-0 z-20 safe-bottom">
       <div className="max-w-4xl mx-auto relative">
-        <form onSubmit={handleSubmit} className="relative flex items-end gap-2 bg-slate-900 p-1.5 sm:p-2 rounded-xl border border-slate-800 focus-within:border-cyan-700/50 focus-within:ring-1 focus-within:ring-cyan-700/50 transition-all shadow-lg">
+        <form
+          onSubmit={handleSubmit}
+          className="relative flex items-end gap-2 bg-slate-900 p-1.5 sm:p-2 rounded-xl border border-slate-800 focus-within:border-cyan-700/50 focus-within:ring-1 focus-within:ring-cyan-700/50 transition-all shadow-lg"
+        >
           
           <div className="pl-2 pb-2.5 sm:pb-3 text-slate-500 hidden sm:block">
             <Code2 size={20} />
@@ -49,7 +52,7 @@ const InputArea: React.FC<InputAreaProps> = ({ onSendMessage, isLoading, onStop 
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Ask a coding question..."
-            className="w-full bg-transparent text-slate-200 placeholder-slate-500 text-sm sm:text-base resize-none focus:outline-none max-h-[150px] sm:max-h-[200px] py-2 sm:py-3 px-2 custom-scrollbar"
+            className="w-full bg-transparent text-slate-200 placeholder-slate-500 text-sm sm:text-base resize-none focus:outline-none max-h-[150px] sm:max-h-[200px] py-2 sm:py-2.5 px-2 custom-scrollbar"
             rows={1}
             disabled={isLoading && !onStop}
           />

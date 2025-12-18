@@ -112,11 +112,13 @@ const App: React.FC = () => {
 
   /* ---------------- RENDER ---------------- */
   return (
-    <div className="flex flex-col h-screen bg-slate-950 text-slate-100">
+    <div className="flex flex-col h-dvh bg-slate-950 text-slate-100">
+      {/* Fixed header on mobile via sticky in component, full-width container here */}
       <Header />
 
-      <main className="flex-1 overflow-y-auto px-4 py-6">
-        <div className="max-w-4xl mx-auto flex flex-col min-h-full">
+      {/* Scrollable messages area between header and input, works well on mobile with keyboard */}
+      <main className="flex-1 overflow-y-auto px-3 sm:px-4 py-3 sm:py-6">
+        <div className="max-w-4xl mx-auto flex flex-col min-h-full pb-2 sm:pb-4">
           {initError ? (
             <div className="flex-1 flex items-center justify-center text-red-400 text-center whitespace-pre-line">
               {initError}
@@ -125,14 +127,14 @@ const App: React.FC = () => {
             <div className="flex-1 flex items-center justify-center text-slate-500">
               <div className="text-center">
                 <MessageSquareDashed
-                  size={48}
-                  className="mx-auto mb-4 opacity-50"
+                  size={40}
+                  className="mx-auto mb-3 opacity-50"
                 />
-                <p>Start a conversation</p>
+                <p className="text-sm sm:text-base">Start a conversation</p>
               </div>
             </div>
           ) : (
-            <div className="flex-1 space-y-2">
+            <div className="flex-1 space-y-2 pb-1">
               {messages.map((msg) => (
                 <MessageBubble key={msg.id} message={msg} />
               ))}
@@ -142,6 +144,7 @@ const App: React.FC = () => {
         </div>
       </main>
 
+      {/* Fixed input bar; already sticky-safe in its own component */}
       <InputArea onSendMessage={handleSendMessage} isLoading={isLoading} />
     </div>
   );

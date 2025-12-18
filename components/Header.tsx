@@ -18,7 +18,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-20 bg-slate-950/80 backdrop-blur-md border-b border-slate-800 safe-top">
+    <header className="sticky top-0 z-30 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 safe-top">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-600 flex items-center justify-center shadow-lg shadow-indigo-900/20">
